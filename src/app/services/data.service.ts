@@ -1,3 +1,4 @@
+import { Product } from './../models/product.model';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 
@@ -10,6 +11,6 @@ export class DataService {
 
 
     getProducts() {
-        return this.http.get<any[]>('http://localhost:3000/v1/products');
+        return this.http.get<Product[]>('http://localhost:3000/v1/products');
     }
 }
