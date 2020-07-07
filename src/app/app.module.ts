@@ -11,6 +11,8 @@ import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
 import { LoginPageComponent } from './pages/account/login-page/login-page.component';
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
     ProductsPageComponent,
     CartPageComponent,
     FramePageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
