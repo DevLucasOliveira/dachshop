@@ -12,7 +12,7 @@
             <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
                 <h3 class="uk-card-title">Autentique-se</h3>
                 <div class="uk-margin">
-                    <input type="text" class="uk-input uk-form-large" formControlName="username" placeholder="CPF"
+                    <input type="text" class="uk-input uk-form-large" formControlName="username" maxlength="14" placeholder="CPF" mask="###.###.###-##"
                     [ngClass]=" {'uk-form-danger': (!form.controls.username.valid && !form.controls.username.pristine)}">
                 </div>
                 <div class="uk-margin">
