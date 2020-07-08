@@ -1,3 +1,5 @@
+import { AuthGuard } from './services/auth.guard';
+import { DataService } from './services/data.service';
 import { MaskDirective } from './directives/mask.directive';
 import { FramePageComponent } from './pages/master/frame.page';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,7 +38,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DataService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
