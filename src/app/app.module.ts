@@ -5,6 +5,8 @@ import { FramePageComponent } from './pages/master/frame.page';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule  } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,7 @@ import { LoginPageComponent } from './pages/account/login-page/login-page.compon
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,16 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     CartPageComponent,
     FramePageComponent,
     ProductCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    SignupPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [DataService, AuthGuard],
   bootstrap: [AppComponent]

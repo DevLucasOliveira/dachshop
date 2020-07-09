@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataService {
 
-     public url = 'http://localhost:3000/v1';
+    public url = 'http://localhost:3000/v1';
 
     constructor(private http: HttpClient) { }
 
@@ -27,9 +27,14 @@ export class DataService {
     }
 
     refreshToken() {
-        return this.http.post(`${this.url}/accounts/refresh-token`, null, { headers: this.composeHeaders()});
+        return this.http.post(`${this.url}/accounts/refresh-token`, null, { headers: this.composeHeaders() });
     }
 
+    create(data) {
+        return this.http.post(`${this.url}/accounts`, data);
+    }
 
-
+    resetPassword(data) {
+        return this.http.post(`${this.url}/accounts/reset-password`, data);
+    }
 }

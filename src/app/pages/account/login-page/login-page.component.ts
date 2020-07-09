@@ -17,26 +17,7 @@ export class LoginPageComponent implements OnInit {
     private service: DataService,
     private fb: FormBuilder,
     private router: Router
-  ) {}
-
-  ngOnInit() {
-    this.buildForm();
-    const token = Security.getToken();
-    if (token) {
-      this.busy = true;
-      this.service.refreshToken().subscribe(
-        (data: any) => {
-          this.busy = false;
-          this.setUser(data.customer, data.token);
-        },
-        (err) => {
-          localStorage.clear();
-          this.busy = false;
-        });
-    }
-  }
-
-  buildForm(){
+  ) {
     this.form = this.fb.group({
       username: ['', Validators.compose([
         Validators.minLength(14),
@@ -50,6 +31,22 @@ export class LoginPageComponent implements OnInit {
         Validators.required
       ])]
     });
+  }
+
+  ngOnInit() {
+    const token = Security.getToken();
+    if (token) {
+      this.busy = true;
+      this.service.refreshToken().subscribe(
+        (data: any) => {
+          this.busy = false;
+          this.setUser(data.customer, data.token);
+        },
+        (err) => {
+          localStorage.clear();
+          this.busy = false;
+        });
+    }
   }
 
   submit() {
@@ -66,7 +63,7 @@ export class LoginPageComponent implements OnInit {
       });
   }
 
-  setUser( user, token) {
+  setUser(user, token) {
     Security.set(user, token);
     this.router.navigate(['/']);
   }
