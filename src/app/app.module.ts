@@ -19,6 +19,7 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SignupPageComponent } from './pages/account/signup-page/signup-page.com
     FramePageComponent,
     ProductCardComponent,
     LoadingComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
