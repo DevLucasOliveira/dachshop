@@ -1,3 +1,4 @@
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 import { AuthGuard } from './services/auth.guard';
 import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
@@ -23,7 +24,9 @@ const routes: Routes = [
   {
     path: 'account',
     component: FramePageComponent,
+    canActivate: [AuthGuard],
     children: [
+      { path: '', component: ProfilePageComponent },
       { path: 'pets', component: PetsPageComponent }
     ]
   },
